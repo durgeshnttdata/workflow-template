@@ -1,1 +1,11 @@
-
+on:
+  workflow_call:
+    inputs:
+      appName:
+        description: 'github-action-cicd'
+        required: true
+        type: string
+      appVersion:
+        description: 1.0.0
+        required: true
+        type: string
