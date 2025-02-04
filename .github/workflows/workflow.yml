@@ -12,7 +12,7 @@ on:
 jobs:      
   build_deploy_dev :
     runs-on: ubuntu-latest
-    environment: dev
+    environment: Sandbox
     steps:
       - name: Checkout current  repo
         uses: actions/checkout@v2
