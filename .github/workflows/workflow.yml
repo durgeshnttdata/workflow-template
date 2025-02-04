@@ -54,8 +54,8 @@ jobs:
             artifactName=$(ls *.jar | head -1)
             mvn -s settings/settings-non-prod.xml deploy -DmuleDeploy \
               -Dmule.artifact=$artifactName \
-              -DENV=${{vars.ENV}} \
-              -DTarget=${{vars.TARGET}} \
+              -Denv=${{vars.ENV}} \
+              -Dtarget=${{vars.TARGET}} \
               -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} \
               -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} \
                 # -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} \
