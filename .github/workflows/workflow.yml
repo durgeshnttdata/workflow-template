@@ -43,7 +43,7 @@ on:
   
         - name: Build  and Publish to Exchange
           run: mvn  -s  settings/settings-non-prod.xml  clean deploy   -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
-  		
+        
         - name: Upload artifact
           uses: actions/upload-artifact@master
           with:
