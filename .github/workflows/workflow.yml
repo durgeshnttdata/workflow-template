@@ -35,13 +35,8 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-maven-
     
-      - name: Update pom version
-        run: |
-          mvn versions:set -DnewVersion=${{inputs.appVersion}} -DgenerateBackupPoms=false
-          mvn versions:commit
-    
       - name: Build  and Publish to Exchange
-        run: mvn  -s  settings/settings-non-prod.xml  clean deploy   -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
+        run: mvn --settings settings/settings-non-prod.xml clean deploy -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
           
       - name: Upload artifact
         uses: actions/upload-artifact@master
