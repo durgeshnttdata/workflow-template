@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <settings>
-	<servers>
-		<server>
-			<id>anypoint-credentials</id>
-			<username>~~~Client~~~</username>
-			<password>e6f146c880b948699aa17cd46a00eb0f~?~6B824c679f2E4262B58465c4ebf121db</password>
-		</server>
-	</servers>
+	
+  <pluginGroups>
+    <pluginGroup>org.mule.tools</pluginGroup>
+  </pluginGroups>
+
+  <servers>
+    <server>
+      <id>Repository</id>
+      <username>~~~Client~~~</username>
+      <password>${DconnectedAppClientId}~?~${DconnectedAppClientSecret}</password>
+    </server>
+  </servers>
+
 </settings>
