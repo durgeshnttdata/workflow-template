@@ -52,7 +52,7 @@ jobs:
       - name: Deploy to Runtime Environment
         run: |
             artifactName=$(ls *.jar | head -1)
-            mvn -s settings/settings-non-prod.xml deploy -DmuleDeploy -Dmule.artifact=$artifactName -DskipTests -Denv=${{vars.ENV}} -Dtarget=${{vars.TARGET}} -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
+            mvn -s settings/settings-non-prod.xml deploy -DmuleDeploy -Dmule.artifact=$artifactName -Dapplication.name=${{ inputs.appName }}-dev -DskipTests -Denv=${{vars.ENV}} -Dtarget=${{vars.TARGET}} -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
                 # -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} \
                 # -Danypoint.platform.client_secret=${{ secrets.ANYPOINT_CLIENT_SECRET }} 
                 #  -Ddecryption.key="$DECRYPTION_KEY"
