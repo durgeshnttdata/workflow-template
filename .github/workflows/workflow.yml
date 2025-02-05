@@ -36,7 +36,7 @@ jobs:
           restore-keys: ${{ runner.os }}-maven-
     
       - name: Build  and Publish to Exchange
-        run: mvn -s settings/settings.xml clean deploy -DconnectedAppClientId="e6f146c880b948699aa17cd46a00eb0f" -DconnectedAppClientSecret="6B824c679f2E4262B58465c4ebf121db"
+        run: mvn -s settings/settings-non-prod.xml clean deploy -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
           
       - name: Upload artifact
         uses: actions/upload-artifact@master
