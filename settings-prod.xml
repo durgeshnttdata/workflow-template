@@ -2,7 +2,7 @@
 <settings>
 	<servers>
 		<server>
-			<id>anypoint-credentials</id>
+			<id>Repository</id>
 			<username>~~~Client~~~</username>
 			<password>db01417e67364a96a7897d1abc0616d2~?~aA75968bDB264Dcf92970829Ec159A5D</password>
 		</server>
