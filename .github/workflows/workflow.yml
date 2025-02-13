@@ -55,8 +55,8 @@ jobs:
             mvn -s settings/settings-non-prod.xml deploy \
                   -DmuleDeploy \
                   -Dmule.artifact=$artifactName \
-                  -Dapplication.name=${{ inputs.appName }} \
-                  -dev -DskipTests -Denv=${{vars.ENV}} \
+                  -Dapplication.name=${{ inputs.appName }}-dev \
+                  -DskipTests -Denv=${{vars.ENV}} \
                   -Dtarget=${{vars.TARGET}} \
                   -DconnectedAppClientId=${{ secrets.CONNECTED_APP_CLIENT_ID }} \
                   -DconnectedAppClientSecret=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} 
