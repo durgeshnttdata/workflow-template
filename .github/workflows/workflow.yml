@@ -21,7 +21,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: 'durgeshnttdata/workflow-template'
-          path: 'settings'
     
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
