@@ -80,7 +80,4 @@ jobs:
       - name: Deploy to Runtime Environment
         run: |
             artifactName=$(ls *.jar | head -1)
-            mvn  mule:deploy -Dmule.artifact=$artifactName -s settings/settings.xml -DmuleDeploy -DskipTests -Dapplication.name=${{ inputs.appName }}-test -Dcloudhub.environment="test"
-                # -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} \
-                # -Danypoint.platform.client_secret=${{ secrets.ANYPOINT_CLIENT_SECRET }} 
-                #  -Ddecryption.key="$DECRYPTION_KEY"
+            mvn  mule:deploy -Dmule.artifact=$artifactName -s settings/settings.xml  -DmuleDeploy -Dcloudhub.environment=${{ secrets.ANYPOINT_ENVIRONMENT }} -Dapplication.name=${{ inputs.appName }}-test -DskipTests -Dcloudhub.target=${{vars.TARGET}} -DCLIENT_ID=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DCLIENT_SECRET=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} -Danypoint.platform.client_secret=${{ secrets.ANYPOINT_CLIENT_SECRET }}
