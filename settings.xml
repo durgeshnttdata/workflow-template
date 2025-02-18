@@ -19,7 +19,7 @@
   </servers>
   <profiles>
     <profile>
-      <id>anypoint-exchange-v3</id>
+      <id>Repository</id>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
