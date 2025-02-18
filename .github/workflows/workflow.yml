@@ -13,8 +13,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout this repo
+    - name: Checkout current  repo
       uses: actions/checkout@v4
+    - name : Checkout template repo
+      uses: actions/checkout@v4
+      with:
+        repository: 'durgeshnttdata/workflow-template'
+        path: 'settings' 
+        
     - name: Cache dependencies
       uses: actions/cache@v4
       with:
@@ -30,7 +36,7 @@ jobs:
       env:
         nexus_username: ${{ secrets.NEXUS_USERNAME }}
         nexus_password: ${{ secrets.NEXUS_PASSWORD }}
-      run: mvn test --settings .maven/settings.xml
+      run: mvn test -s settings/settings.xml
       
   build_deploy_dev :
     runs-on: ubuntu-latest
