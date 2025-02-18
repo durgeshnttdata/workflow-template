@@ -25,7 +25,7 @@
       </activation>
       <repositories>
         <repository>
-          <id>anypoint-exchange-v3</id>
+          <id>Repository</id>
           <name>Anypoint Platform Exchange Repository</name>
    	  <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${PLATFORM_ORG_ID}/maven</url> 
           <layout>default</layout>
