@@ -41,7 +41,7 @@ jobs:
   build_deploy_dev :
     runs-on: ubuntu-latest
     needs: test
-    environment: ${{vars.ENV}} 
+    environment: dev 
     steps:
       - name: Checkout current  repo
         uses: actions/checkout@v4
