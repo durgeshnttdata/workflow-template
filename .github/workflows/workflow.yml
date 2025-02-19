@@ -41,7 +41,7 @@ jobs:
   build_deploy_dev :
     runs-on: ubuntu-latest
     needs: test
-    environment: dev
+    environment: ${{vars.ENV}} 
     steps:
       - name: Checkout current  repo
         uses: actions/checkout@v4
@@ -81,4 +81,4 @@ jobs:
       - name: Deploy to Runtime Environment
         run : |
           artifactName=$(ls *.jar | head -1)
-          mvn  mule:deploy -Dmule.artifact=$artifactName -s settings/settings.xml -DskipTests -DmuleDeploy -Dcloudhub.environment=${{ secrets.ANYPOINT_ENVIRONMENT }} -Dapplication.name=${{ inputs.appName }}-dev -Dcloudhub.target=${{vars.TARGET}} -DCLIENT_ID=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DCLIENT_SECRET=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} -Danypoint.platform.client_secret=${{ secrets.ANYPOINT_CLIENT_SECRET }}
+          mvn  mule:deploy -Dmule.artifact=$artifactName -s settings/settings.xml -DskipTests -DmuleDeploy -Dcloudhub.environment=${{ secrets.ANYPOINT_ENVIRONMENT }} -Dapplication.name=${{ inputs.appName }}-dev -Denv=${{vars.ENV}} -Dcloudhub.target=${{vars.TARGET}} -DCLIENT_ID=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DCLIENT_SECRET=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} -Danypoint.platform.client_secret=${{ secrets.ANYPOINT_CLIENT_SECRET }}
