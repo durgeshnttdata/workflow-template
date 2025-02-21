@@ -19,7 +19,6 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: 'durgeshnttdata/workflow-template'
-        token: ${{ secrets.GH_PAT }}
         path: 'settings' 
         
     - name: Cache dependencies
