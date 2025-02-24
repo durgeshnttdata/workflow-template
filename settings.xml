@@ -4,7 +4,8 @@
 		<server>
 			<id>Repository</id>
 			<username>~~~Client~~~</username>
-			<password>${CLIENT_ID}~?~${CLIENT_SECRET}</password>
+			<!--<password>${CLIENT_ID}~?~${CLIENT_SECRET}</password>-->
+			<password>cbdd7504959a4fe19d5de5f658562c0b~?~91f37C43a565423093EE724421C4835B</password>
 		</server>
 		<server>
 			<id>releases-ee</id>
