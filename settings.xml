@@ -2,7 +2,7 @@
 <settings>
 	<servers>
 		<server>
-			<id>Repository</id>
+			<id>anypoint-exchange-v3</id>
 			<username>~~~Client~~~</username>
 			<password>${CLIENT_ID}~?~${CLIENT_SECRET}</password>
 		</server>
@@ -14,7 +14,7 @@
 	</servers>
 	<profiles>
 		<profile>
-			<id>Repository</id>
+			<id>anypoint-exchange-v3</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
