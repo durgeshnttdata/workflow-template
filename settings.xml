@@ -8,8 +8,8 @@
 		</server>
 		<server>
 			<id>releases-ee</id>
-			<username>${nexus_username}</username>
-			<password>${nexus_password}</password>
+			<username>unitedsiteservices.nexus</username>
+			<password>uiXiUDqeP95LNAS</password>
 		</server>
 	</servers>
 	<profiles>
