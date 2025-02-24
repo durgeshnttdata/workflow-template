@@ -2,7 +2,7 @@
 <settings>
 	<servers>
 		<server>
-			<id>anypoint-exchange-v3</id>
+			<id>Repository</id>
 			<username>~~~Client~~~</username>
 			<password>${CLIENT_ID}~?~${CLIENT_SECRET}</password>
 		</server>
@@ -20,7 +20,7 @@
 			</activation>
 			<repositories>
 				<repository>
-					<id>anypoint-exchange-v3</id>
+					<id>Repository</id>
 					<name>Anypoint Platform Exchange Repository</name>
 					<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/272c406d-e2c1-4b02-87f9-38e686f1e9e1/maven</url>
 					<layout>default</layout>
