@@ -22,7 +22,7 @@
 				<repository>
 					<id>Repository</id>
 					<name>Anypoint Platform Exchange Repository</name>
-					<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/272c406d-e2c1-4b02-87f9-38e686f1e9e1/maven</url>
+					<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/0c88fcc4-2f88-4ee1-88f5-b8f70772a59f/maven</url>
 					<layout>default</layout>
 				</repository>
 				<repository>
