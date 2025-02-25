@@ -85,5 +85,4 @@ jobs:
         run : |
           artifactName=$(ls *.jar | head -1)
           mvn  mule:deploy -Dmule.artifact=$artifactName -s settings/settings.xml -DskipTests -DmuleDeploy -Dcloudhub.environment=${{ vars.ANYPOINT_ENVIRONMENT }} -Denv=${{vars.ENV}} -Dapplication.name=${{ inputs.appName }}-dev -Dsecure_key=${{secrets.KEY}} -Dcloudhub.target=${{vars.TARGET}} -DCLIENT_ID=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DCLIENT_SECRET=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} -Danypoint.platform.client_id=${{ secrets.ANYPOINT_CLIENT_ID}} -Danypoint.platform.client_secret=${{ secrets.ANYPOINT_CLIENT_SECRET }} -Dddapikey=${{ secrets.DDAPIKEY }} -Ddatadog.env=${{ vars.DATADOG_ENV }} -Dvcores=${{ vars.VCORES }} -Dreplicas=${{ vars.REPLICAS }}
-
-  
+          
