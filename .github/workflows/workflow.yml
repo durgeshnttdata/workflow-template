@@ -18,7 +18,7 @@ jobs:
     - name : Checkout template repo
       uses: actions/checkout@v4
       with:
-        repository: 'USSBI/mulesoft-workflow-template'
+        repository: 'durgeshnttdata/mulesoft-workflow-template'
         path: 'settings' 
         
     - name: Cache dependencies
@@ -52,7 +52,7 @@ jobs:
       - name : Checkout template repo
         uses: actions/checkout@v4
         with:
-          repository: 'USSBI/mulesoft-workflow-template'
+          repository: 'durgeshnttdata/mulesoft-workflow-template'
           path: 'settings'
     
       - name: Set up JDK 1.17
