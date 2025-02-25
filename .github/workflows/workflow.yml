@@ -2,7 +2,7 @@ on:
   workflow_call:
     inputs:
       appName:
-        description: 'github-action-cicd-demo'
+        description: 'github-action-cicd'
         required: true
         type: string
       appVersion:
@@ -18,7 +18,7 @@ jobs:
     - name : Checkout template repo
       uses: actions/checkout@v4
       with:
-        repository: 'durgeshnttdata/workflow-template'
+        repository: 'USSBI/mulesoft-workflow-template'
         path: 'settings' 
         
     - name: Cache dependencies
@@ -36,7 +36,10 @@ jobs:
       env:
         nexus_username: ${{ secrets.NEXUS_USERNAME }}
         nexus_password: ${{ secrets.NEXUS_PASSWORD }}
-      run: mvn test -s settings/settings.xml
+        CLIENT_ID: ${{ secrets.CONNECTED_APP_CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
+        secure_key: ${{ secrets.KEY }}
+      run: mvn -s settings/settings.xml test -DCLIENT_ID=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DCLIENT_SECRET=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} -Dsecure_key=${{ secrets.KEY }} -Denv=${{ vars.ENV }}
       
   build_deploy_dev :
     runs-on: ubuntu-latest
@@ -49,7 +52,7 @@ jobs:
       - name : Checkout template repo
         uses: actions/checkout@v4
         with:
-          repository: 'durgeshnttdata/workflow-template'
+          repository: 'USSBI/mulesoft-workflow-template'
           path: 'settings'
     
       - name: Set up JDK 1.17
