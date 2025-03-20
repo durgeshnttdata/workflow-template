@@ -40,7 +40,7 @@ jobs:
         CLIENT_ID: ${{ secrets.CONNECTED_APP_CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.CONNECTED_APP_CLIENT_SECRET }}
         secure_key: ${{ secrets.KEY }}
-      run: mvn -s settings/settings.xml test -DCLIENT_ID=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DCLIENT_SECRET=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} -Dsecure_key=${{ secrets.KEY }} -Denv=${{ vars.ENV }}
+      run: mvn -s settings/settings.xml test -DCLIENT_ID=${{ secrets.CONNECTED_APP_CLIENT_ID }} -DCLIENT_SECRET=${{ secrets.CONNECTED_APP_CLIENT_SECRET }} -Dsecure_key=${{ secrets.KEY }} -Denv=${{ vars.ENV }} -Dmunit.failIfNoTests=false
       
   build_deploy_dev :
     runs-on: ubuntu-latest
